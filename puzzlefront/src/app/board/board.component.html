@@ -1,5 +1,5 @@
 <div class="board">
-    <div *ngFor="let card of cards">
-        <app-card *ngIf="card" [id]="card" (click)="cardClicked(card)"></app-card>
+    <div *ngFor="let show of puzzles; let i = index" [attr.data-index]="i">
+        <app-card *ngIf="show" [id]="i+1" (click)="cardClicked(i+1)"></app-card>
     </div>
 </div>

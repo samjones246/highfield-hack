@@ -1,0 +1,16 @@
+<div class="content">
+    <div class="description">
+        <p>Find the next letter in the sequence:</p>
+        <p>A D G J M P</p>
+    </div>
+    <label for="answer">
+        <input type="text" name="answer" #answer>
+    </label>
+    <button (click)="checkAnswer(answer.value)">Submit</button>
+    <p *ngIf="feedback==1">
+        Correct answer! This puzzle is now solved!
+    </p>
+    <p *ngIf="feedback==-1">
+        Incorrect, try again!
+    </p>
+</div>

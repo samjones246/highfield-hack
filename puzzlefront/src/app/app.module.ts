@@ -11,6 +11,10 @@ import { CardComponent } from './card/card.component';
 import { PuzzleViewerComponent } from './puzzle-viewer/puzzle-viewer.component';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BasePuzzleComponent } from './base-puzzle/base-puzzle.component';
+import { PuzzleSequenceAComponent } from './puzzle-sequence-a/puzzle-sequence-a.component';
+import { PuzzleDirective } from './puzzle-directive';
+import { PuzzleSequenceBComponent } from './puzzle-sequence-b/puzzle-sequence-b.component';
 const config: SocketIoConfig = { url: 'http://82.19.126.118:3434', options: {} };
 
 @NgModule({
@@ -20,7 +24,11 @@ const config: SocketIoConfig = { url: 'http://82.19.126.118:3434', options: {} }
     ClickcounterComponent,
     BoardComponent,
     CardComponent,
-    PuzzleViewerComponent
+    PuzzleViewerComponent,
+    BasePuzzleComponent,
+    PuzzleSequenceAComponent,
+    PuzzleDirective,
+    PuzzleSequenceBComponent
   ],
   imports: [
     BrowserModule,

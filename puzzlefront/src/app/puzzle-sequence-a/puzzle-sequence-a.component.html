@@ -1,0 +1,16 @@
+<div class="content">
+    <div class="description">
+        <p>Find the next number in the sequence:</p>
+        <p>1 3 2 4 3 5 4 6 5 7 6 8</p>
+    </div>
+    <label for="answer">
+        <input type="text" name="answer" #answer>
+    </label>
+    <button (click)="checkAnswer(answer.value)">Submit</button>
+    <p *ngIf="feedback==1">
+        Correct answer! This puzzle is now solved!
+    </p>
+    <p *ngIf="feedback==-1">
+        Incorrect, try again!
+    </p>
+</div>

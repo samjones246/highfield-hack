@@ -9,9 +9,13 @@ import { PlayerService } from './player.service';
 export class AppComponent {
   title = 'puzzlefront';
   activeCard = null;
+  puzzles : Boolean[];
 
   constructor (private playerService : PlayerService){
-
+    playerService.puzzles.subscribe(updated => {
+      console.log(updated);
+      this.puzzles = updated;
+    })
   }
 
   reset() : void {

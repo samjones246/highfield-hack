@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { PlayerService } from '../player.service';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent implements OnInit {
+  @Input() puzzles : Boolean[];
   cards : number[] = [];
   current : number = null;
   @Output() cardChosen = new EventEmitter<number>();
@@ -16,14 +18,15 @@ export class BoardComponent implements OnInit {
       this.cards[i] = i+1;
     }
     playerService.puzzles.subscribe(puzzles => {
-      this.cards = []
+      var cards = []
       for(var i=0;i<puzzles.length;i++){
         if (puzzles[i]){
-          this.cards.push(i+1);
+          cards.push(i+1);
         }else{
-          this.cards.push(null);
+          cards.push(null);
         }
       }
+      this.cards = cards;
     })
   }
 
