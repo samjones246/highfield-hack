@@ -1,2 +1,3 @@
-<app-info></app-info>
-<app-clickcounter></app-clickcounter>
+<app-board *ngIf="activeCard==null else elseBlock" (cardChosen)="activeCard=$event"></app-board>
+<ng-template #elseBlock><app-puzzle-viewer [puzzle]="activeCard" (return)="activeCard=null"></app-puzzle-viewer></ng-template>
+<button (click)="reset()">Reset</button>

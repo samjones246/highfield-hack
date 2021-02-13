@@ -1,1 +1,5 @@
-<p>board works!</p>
+<div class="board">
+    <div *ngFor="let card of cards">
+        <app-card *ngIf="card" [id]="card" (click)="cardClicked(card)"></app-card>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PlayerService } from './player.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'puzzlefront';
+  activeCard = null;
+
+  constructor (private playerService : PlayerService){
+
+  }
+
+  reset() : void {
+    this.playerService.reset();
+  }
 }

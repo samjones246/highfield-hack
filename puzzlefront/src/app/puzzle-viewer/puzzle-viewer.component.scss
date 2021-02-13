@@ -1,0 +1,15 @@
+.outer {
+    border-style: solid;
+    margin: 5%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-75%);
+    transform: translateY(-75%);
+    width: 87.5%;
+    height: 50%;
+    padding: 10px;
+}
+
+fa-icon {
+    color: gray;
+}
