@@ -1,0 +1,5 @@
+<p>Players Connected:</p>
+<ul>
+    <li *ngFor="let id of players | async">{{ id }}</li>
+</ul>
+<p>Your ID: {{ myId | async }}</p>
