@@ -1,12 +1,15 @@
 <div class="content">
     <div class="description">
-        <p>Find the next number in the sequence:</p>
-        <p>1 3 2 4 3 5 4 6 5 7 6 8</p>
+        <p>Find the next item in the sequence:</p>
+        <p>{{ data.sequence }}</p>
     </div>
-    <label for="answer">
-        <input type="text" name="answer" #answer>
-    </label>
-    <button (click)="checkAnswer(answer.value)">Submit</button>
+    <div *ngIf="canPlay else elseBlock">
+        <label for="answer">
+            <input type="text" name="answer" #answer>
+        </label>
+        <button (click)="checkAnswer(answer.value)">Submit</button>
+    </div>
+    <ng-template #elseBlock>Somebody else is answering this puzzle at the moment. This page will update if the puzzle becomes available</ng-template>
     <p *ngIf="feedback==1">
         Correct answer! This puzzle is now solved!
     </p>

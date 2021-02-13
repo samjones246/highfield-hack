@@ -13,6 +13,7 @@ export class BasePuzzleComponent implements OnInit, Puzzle{
   @Input() data : any;
   @Output() complete = new EventEmitter<void>();
   feedback : number = 0;
+  @Input() canPlay : boolean;
 
   constructor(private playerService : PlayerService) { }
 
