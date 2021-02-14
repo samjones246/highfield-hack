@@ -11,6 +11,10 @@ import { PuzzleSequenceAComponent } from './puzzle-sequence-a/puzzle-sequence-a.
 export class PuzzleMapService {
   mapping = {1: new PuzzleData(PuzzleSequenceAComponent, {correctAnswer: "7", sequence:"1 3 2 4 3 5 4 6 5 7 6 8"}),
              18: new PuzzleData(PuzzleSequenceAComponent, {correctAnswer: "63", sequence:"0 3 8 15 24 35 48"}),
+             14: new PuzzleData(PuzzleSequenceAComponent, {correctAnswer: "21", sequence:"1 1 2 3 5 8 13"}),
+             8: new PuzzleData(PuzzleSequenceAComponent, {correctAnswer: "pentagon", sequence:"circle, semi-circle, triangle, square"}),
+             12: new PuzzleData(PuzzleSequenceAComponent, {correctAnswer: "8192", sequence:"2 2 4 8 32 256"}),
+             22: new PuzzleData(PuzzleSequenceAComponent, {correctAnswer: "S", sequence:"F T N I I T"}),
              16: new PuzzleData(PuzzleSequenceAComponent, {correctAnswer: "S", sequence:"A D G J M P"}),
              2: new PuzzleData(PuzzleCrosswordComponent, {correctAnswer: "christmas",
                                                           numColumns:18, 
