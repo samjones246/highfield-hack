@@ -13,15 +13,19 @@ export class PaintingPuzzleComponent extends BasePuzzleComponent {
                           [false, false, false],
                           [false, false, false],
                           [false, false, false]]
-  solution : boolean[][] = [[true, false, false],
-                            [false, false, false],
-                            [false, false, false],
-                            [false, false, false],
-                            [false, false, false],
-                            [false, false, false]]
+                          // A yellow
+                          // B red
+                          // C blue
+  solution : boolean[][] = [[false, true, false],
+                            [true, true, false],
+                            [true, false, false],
+                            [true, false, true],
+                            [false, false, true],
+                            [false, true, true]]
   filled : boolean[] = [false, false, false, false, false, false]
   brush : boolean[] = [false, false, false];
   assetDir = "../../assets/Painting-Jigsaw Puzzle/"
+  pieces = ["A1.svg"]
   updateBrush(pot : number) : void {
     this.brush[pot] = true;
     console.log(this.brush)
@@ -49,5 +53,12 @@ export class PaintingPuzzleComponent extends BasePuzzleComponent {
     }else{
       this.checkAnswer("bad")
     }
+  }
+  getRandomTop() : number {
+    return 0;
+  }
+
+  getRandomLeft() : number {
+    return 0;
   }
 }

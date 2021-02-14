@@ -2,10 +2,10 @@
     <div class="content">
         <div class="paint">
             <img src="../../assets/Painting-Jigsaw Puzzle/Paint A.svg" (click)="updateBrush(0)">
-            <img src="../../assets/Painting-Jigsaw Puzzle/Paint B.svg" (click)="updateBrush(1)">
+            <img src="../../assets/Painting-Jigsaw Puzzle/Paint C.svg" (click)="updateBrush(2)">
         </div>
         <div class="paint">
-            <img src="../../assets/Painting-Jigsaw Puzzle/Paint C.svg" (click)="updateBrush(2)">
+            <img src="../../assets/Painting-Jigsaw Puzzle/Paint B.svg" (click)="updateBrush(1)">
             <img src="../../assets/Painting-Jigsaw Puzzle/Water Pot.svg" (click)="clearBrush()">
         </div>
         <div class="rainbow">
@@ -13,19 +13,19 @@
             "assetDir + (!filled[0] ? 'Red Rainbow Strip.svg' : 'Filled Red Strip.svg')"
             (click)="paint(0)">
             <img [src]=
-            "assetDir + (!filled[1] ? 'Orange Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            "assetDir + (!filled[1] ? 'Orange Rainbow Strip.svg' : 'Filled Other Strips.svg')"
             (click)="paint(1)">
             <img [src]=
-            "assetDir + (!filled[2] ? 'Yellow Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            "assetDir + (!filled[2] ? 'Yellow Rainbow Strip.svg' : 'Filled Other Strips.svg')"
             (click)="paint(2)">
             <img [src]=
-            "assetDir + (!filled[3] ? 'Green Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            "assetDir + (!filled[3] ? 'Green Rainbow Strip.svg' : 'Filled Other Strips.svg')"
             (click)="paint(3)">
             <img [src]=
-            "assetDir + (!filled[4] ? 'Blue Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            "assetDir + (!filled[4] ? 'Blue Rainbow Strip.svg' : 'Filled Other Strips.svg')"
             (click)="paint(4)">
             <img [src]=
-            "assetDir + (!filled[5] ? 'Purple Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            "assetDir + (!filled[5] ? 'Purple Rainbow Strip.svg' : 'Filled Other Strips.svg')"
             (click)="paint(5)">
         </div>
     </div>
@@ -45,7 +45,11 @@
     </div>
 </div>
 <div *ngIf="player==2">
-    Player 2
+    <div class=jigsawArea>
+        <div class="jigsawPiece" *ngFor="let piece of pieces" [style.top]="getRandomTop()" [style.left]="getRandomLeft()">
+            <img [src]="assetDir + piece">
+        </div>
+    </div>
 </div>
 <div *ngIf="player==0">
     This is a two player challenge, and two players are already playing! Try another challenge.
