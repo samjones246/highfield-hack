@@ -1,0 +1,27 @@
+.content {
+    display: flex;
+}
+
+.rainbow {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin: auto;
+}
+
+.paint {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 50%;
+    margin: auto;
+}
+
+.info {
+    text-align: center;
+    font-size: 12pt;
+}
+
+img {
+    cursor: pointer;
+}

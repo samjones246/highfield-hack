@@ -1,9 +1,52 @@
 <div *ngIf="player==1">
-    Player 1
+    <div class="content">
+        <div class="paint">
+            <img src="../../assets/Painting-Jigsaw Puzzle/Paint A.svg" (click)="updateBrush(0)">
+            <img src="../../assets/Painting-Jigsaw Puzzle/Paint B.svg" (click)="updateBrush(1)">
+        </div>
+        <div class="paint">
+            <img src="../../assets/Painting-Jigsaw Puzzle/Paint C.svg" (click)="updateBrush(2)">
+            <img src="../../assets/Painting-Jigsaw Puzzle/Water Pot.svg" (click)="clearBrush()">
+        </div>
+        <div class="rainbow">
+            <img [src]=
+            "assetDir + (!filled[0] ? 'Red Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            (click)="paint(0)">
+            <img [src]=
+            "assetDir + (!filled[1] ? 'Orange Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            (click)="paint(1)">
+            <img [src]=
+            "assetDir + (!filled[2] ? 'Yellow Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            (click)="paint(2)">
+            <img [src]=
+            "assetDir + (!filled[3] ? 'Green Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            (click)="paint(3)">
+            <img [src]=
+            "assetDir + (!filled[4] ? 'Blue Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            (click)="paint(4)">
+            <img [src]=
+            "assetDir + (!filled[5] ? 'Purple Rainbow Strip.svg' : 'Filled Red Strip.svg')"
+            (click)="paint(5)">
+        </div>
+    </div>
+    <div class="info">
+        <p>Paint each segment of the rainbow with the correct colour. Click a paint pot to select a colour. Clicking another colour will mix the colour on your brush. Click the water pot to clear your brush.</p>
+        <p>Also, you are colourblind. A second player may be able to help.</p>
+        <div *ngIf="canPlay else elseBlock">
+            <button (click)="checkCanvas()">Submit</button>
+        </div>
+        <ng-template #elseBlock>Somebody else is answering this puzzle at the moment. This page will update if the puzzle becomes available</ng-template>
+        <p *ngIf="feedback==1">
+            Correct answer! This puzzle is now solved!
+        </p>
+        <p *ngIf="feedback==-1">
+            Incorrect, try again!
+        </p>
+    </div>
 </div>
 <div *ngIf="player==2">
     Player 2
 </div>
 <div *ngIf="player==0">
-    Not playing
+    This is a two player challenge, and two players are already playing! Try another challenge.
 </div>
