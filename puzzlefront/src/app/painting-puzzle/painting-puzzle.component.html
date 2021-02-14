@@ -46,9 +46,7 @@
 </div>
 <div *ngIf="player==2">
     <div class=jigsawArea>
-        <div class="jigsawPiece" *ngFor="let piece of pieces" [style.top]="getRandomTop()" [style.left]="getRandomLeft()">
-            <img [src]="assetDir + piece">
-        </div>
+        <img class="jigsawPiece" *ngFor="let piece of pieces; let i=index" [style.left]="positions[i][0]" [style.top]="positions[i][1]" [src]="assetDir + piece" cdkDragBoundary=".jigsawArea" cdkDrag>
     </div>
 </div>
 <div *ngIf="player==0">

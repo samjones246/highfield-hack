@@ -26,8 +26,12 @@ img {
     cursor: pointer;
 }
 
+.jigsawArea {
+    height: 50vh;
+} 
+
 .jigsawPiece {
-    width: 10px;
-    height: 10px;
-    position: relative;
+    width: 100px;
+    height: 100px;
+    position: absolute;
 }

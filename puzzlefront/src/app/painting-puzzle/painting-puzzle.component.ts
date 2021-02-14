@@ -25,7 +25,17 @@ export class PaintingPuzzleComponent extends BasePuzzleComponent {
   filled : boolean[] = [false, false, false, false, false, false]
   brush : boolean[] = [false, false, false];
   assetDir = "../../assets/Painting-Jigsaw Puzzle/"
-  pieces = ["A1.svg"]
+  pieces = ["A1.svg", "A2.svg", "A3.svg","A4.svg", "A5.svg", "A6.svg","A7.svg", "A8.svg", "A9.svg",
+            "B1.svg", "B2.svg", "B3.svg","B4.svg", "B5.svg", "B6.svg","B7.svg", "B8.svg", "B9.svg",
+            "C1.svg", "C2.svg", "C3.svg","C4.svg", "C5.svg", "C6.svg","C7.svg", "C8.svg", "C9.svg"]
+  positions = []
+  ngOnInit(){
+    this.positions = Array(this.pieces.length);
+    for(var i=0;i<this.pieces.length;i++){
+      this.positions[i] = [this.getRandomLeft(), this.getRandomTop()];
+    }
+    console.log(this.positions)
+  }
   updateBrush(pot : number) : void {
     this.brush[pot] = true;
     console.log(this.brush)
@@ -54,11 +64,17 @@ export class PaintingPuzzleComponent extends BasePuzzleComponent {
       this.checkAnswer("bad")
     }
   }
-  getRandomTop() : number {
-    return 0;
+  getRandomTop() : string {
+    var lowerBound = 26;
+    var upperBound = 65;
+    var val = "" + (Math.trunc(Math.random() * (upperBound - lowerBound)) + lowerBound) + "vh"
+    return val;
   }
 
-  getRandomLeft() : number {
-    return 0;
+  getRandomLeft() : string {
+    var upperBound = 80;
+    var lowerBound = 20;
+    var val = "" + (Math.trunc(Math.random() * (upperBound - lowerBound)) + lowerBound) + "vw"
+    return val;
   }
 }

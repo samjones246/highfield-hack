@@ -19,6 +19,8 @@ import { PuzzleCrosswordComponent } from './puzzle-crossword/puzzle-crossword.co
 import { CrosswordGridComponent } from './crossword-grid/crossword-grid.component';
 import { GenericPuzzleComponent } from './generic-puzzle/generic-puzzle.component';
 import { PaintingPuzzleComponent } from './painting-puzzle/painting-puzzle.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 const config: SocketIoConfig = { url: 'http://82.19.126.118:3434', options: {} };
 
 @NgModule({
@@ -42,7 +44,9 @@ const config: SocketIoConfig = { url: 'http://82.19.126.118:3434', options: {} }
     BrowserModule,
     CommonModule,
     SocketIoModule.forRoot(config),
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
