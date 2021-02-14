@@ -23,9 +23,9 @@ export class PuzzleMapService {
              4: new PuzzleData(GenericPuzzleComponent, {correctAnswer: "252",
                                                         description:[],
                                                         content:["If 7 bengs make a bong, 12 bongs make a bing and a screwdriver costs 3 bings, how many bengs does a screwdriver cost?"]}),
-             5: new PuzzleData(GenericPuzzleComponent, {correctAnswer: "252",
+             5: new PuzzleData(GenericPuzzleComponent, {correctAnswer: "22",
              description:[],
-             content:["If 7 bengs make a bong, 12 bongs make a bing and a screwdriver costs 3 bings, how many bengs does a screwdriver cost?"]})
+             content:["Jane is moving house. She has 385 books and can fit 18 books in a box.","How many boxes will she need?"]})
             }
   constructor() { }
   getPuzzle(id) : PuzzleData{
