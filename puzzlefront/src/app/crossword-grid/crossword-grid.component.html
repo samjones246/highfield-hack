@@ -1,3 +1,5 @@
 <div class="container">
-    <div *ngFor="cell of grid" class="cell"></div>
+    <div *ngFor="let cell of grid; let i = index" class="cell">
+        <input *ngIf="cell" size="1" maxlength="1" [class.target]="i % data.numColumns == data.targetColumn">
+    </div>
 </div>

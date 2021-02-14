@@ -1,0 +1,13 @@
+.content {
+    text-align: center;
+}
+
+.description {
+    font-size: 24pt;
+}
+
+.anagrams {
+    font-size: 16pt;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

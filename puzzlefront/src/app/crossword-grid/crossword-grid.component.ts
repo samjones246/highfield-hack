@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CrosswordGridComponent implements OnInit {
 
   @Input() grid : boolean[]
+  @Input() data : any;
   constructor() { }
 
   ngOnInit(): void {

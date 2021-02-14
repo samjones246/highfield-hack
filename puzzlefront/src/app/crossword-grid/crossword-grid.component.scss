@@ -5,6 +5,11 @@
     row-gap: 10px;
 }
 
-.cell {
-    background-color: green;
+.target {
+    outline-style: solid;
+    outline-color: blue;
+}
+
+input {
+    text-align: center;
 }

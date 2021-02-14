@@ -22,7 +22,7 @@ export class BasePuzzleComponent implements OnInit, Puzzle{
 
   checkAnswer(answer : string) : void{
     console.log(answer)
-    if (answer == this.data.correctAnswer){
+    if (answer.toLowerCase() == this.data.correctAnswer.toLowerCase()){
       this.feedback = 1;
       this.complete.emit();
     }else{

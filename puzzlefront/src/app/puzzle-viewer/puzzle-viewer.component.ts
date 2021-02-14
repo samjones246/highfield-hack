@@ -17,6 +17,7 @@ export class PuzzleViewerComponent implements OnInit, OnChanges {
   @ViewChild(PuzzleDirective, {static: true}) puzzleHost: PuzzleDirective;
   @Input() canView : boolean;
   @Input() canPlay : boolean;
+  @Input() player : number;
   componentRef : ComponentRef<BasePuzzleComponent> = null;
   loaded = false;
 

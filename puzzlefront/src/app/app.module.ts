@@ -17,6 +17,8 @@ import { PuzzleDirective } from './puzzle-directive';
 import { PuzzleSequenceBComponent } from './puzzle-sequence-b/puzzle-sequence-b.component';
 import { PuzzleCrosswordComponent } from './puzzle-crossword/puzzle-crossword.component';
 import { CrosswordGridComponent } from './crossword-grid/crossword-grid.component';
+import { GenericPuzzleComponent } from './generic-puzzle/generic-puzzle.component';
+import { PaintingPuzzleComponent } from './painting-puzzle/painting-puzzle.component';
 const config: SocketIoConfig = { url: 'http://82.19.126.118:3434', options: {} };
 
 @NgModule({
@@ -32,7 +34,9 @@ const config: SocketIoConfig = { url: 'http://82.19.126.118:3434', options: {} }
     PuzzleDirective,
     PuzzleSequenceBComponent,
     PuzzleCrosswordComponent,
-    CrosswordGridComponent
+    CrosswordGridComponent,
+    GenericPuzzleComponent,
+    PaintingPuzzleComponent
   ],
   imports: [
     BrowserModule,

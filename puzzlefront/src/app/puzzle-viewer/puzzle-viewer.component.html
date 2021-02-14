@@ -1,4 +1,6 @@
 <div class="outer">
-    <a href="#" (click)="returnClicked()"><fa-icon [icon]="faLongArrowAltLeft"></fa-icon></a>
-    <ng-template puzzleHost (complete)="puzzleComplete()"></ng-template>
+    <div class="inner">
+        <a href="#" (click)="returnClicked()"><fa-icon [icon]="faLongArrowAltLeft"></fa-icon></a>
+        <ng-template puzzleHost (complete)="puzzleComplete()"></ng-template>
+    </div>
 </div>

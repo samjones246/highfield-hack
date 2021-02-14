@@ -1,10 +1,13 @@
 .outer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inner {
     border-style: solid;
-    margin: 5%;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-75%);
-    transform: translateY(-75%);
+    margin: auto;
     width: 87.5%;
     padding: 10px;
     background-color: rgb(255, 112, 112);

@@ -1,13 +1,12 @@
 <div class="content">
-    <div class="description">Unscramble the anagrams to find the codeword</div>
-    <br/>
-    <app-crossword-grid [attr.num-columns]="data.numColumns" [grid]="grid" [data]="data"></app-crossword-grid>
-    <div class="anagrams">
-        <p *ngFor="let word of data.anagrams; let i = index">{{ (i+1) + '. ' }} {{ word }}</p>
+    <div class="description">
+        <p *ngFor="let line of data.description">{{ line }}</p>
+    </div>
+    <div class="puzzle">
+        <p *ngFor="let line of data.content">{{ line }}</p>
     </div>
     <div *ngIf="canPlay else elseBlock">
         <label for="answer">
-            Codeword:
             <input type="text" name="answer" #answer>
         </label>
         <button (click)="checkAnswer(answer.value)">Submit</button>

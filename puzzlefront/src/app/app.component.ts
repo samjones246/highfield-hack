@@ -14,6 +14,7 @@ export class AppComponent {
   locks : any[];
   canView : boolean;
   canPlay : boolean;
+  player : number = 0;
 
   constructor (private playerService : PlayerService){
     playerService.puzzles.subscribe(updated => {
@@ -31,6 +32,9 @@ export class AppComponent {
         this.canView = this.canPlay || !locks[this.activeCard - 1].limitViewers
         if(locks[this.activeCard - 1].playing.length < locks[this.activeCard - 1].playerLimit){
           this.playerService.tryLockPuzzle(this.activeCard);
+        }
+        if(this.canPlay){
+          this.player = locks[this.activeCard-1].indexOf(this.id) + 1
         }
       }
     })
