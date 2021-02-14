@@ -1,3 +1,5 @@
-<app-board *ngIf="activeCard==null else elseBlock" (cardChosen)="showPuzzle($event)" [puzzles]="puzzles"></app-board>
+<div class="container" *ngIf="activeCard==null else elseBlock" >
+    <app-board (cardChosen)="showPuzzle($event)" [puzzles]="puzzles"></app-board>
+</div>
 <ng-template #elseBlock><app-puzzle-viewer [puzzle]="activeCard" [canPlay]="canPlay" [canView]="canView" [player]="player" (return)="activeCard=null"></app-puzzle-viewer></ng-template>
 <button (click)="reset()">Reset</button>
