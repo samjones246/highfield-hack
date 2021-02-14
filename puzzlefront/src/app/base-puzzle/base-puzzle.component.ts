@@ -1,6 +1,6 @@
 import { EventEmitter, Output } from '@angular/core';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, NumberValueAccessor } from '@angular/forms';
 import { PlayerService } from '../player.service';
 import { Puzzle } from '../puzzle';
 
@@ -14,6 +14,7 @@ export class BasePuzzleComponent implements OnInit, Puzzle{
   @Output() complete = new EventEmitter<void>();
   feedback : number = 0;
   @Input() canPlay : boolean;
+  @Input() player : number;
 
   constructor(private playerService : PlayerService) { }
 

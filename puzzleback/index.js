@@ -61,7 +61,7 @@ io.on('connection', socket => {
     })
     socket.on("get-lock", id => {
         var lock = locks[id - 1];
-        if (lock.playing.length < lock.playerLimit){
+        if (lock.playing.length < lock.playerLimit && !(lock.playing.includes(socket.id))){
             lock.playing.push(socket.id);
         }
         io.emit("update-locks", locks);

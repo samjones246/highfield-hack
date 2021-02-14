@@ -30,12 +30,12 @@ export class AppComponent {
       if(this.activeCard){
         this.canPlay = locks[this.activeCard - 1].playing.includes(this.id)
         this.canView = this.canPlay || !locks[this.activeCard - 1].limitViewers
-        if(locks[this.activeCard - 1].playing.length < locks[this.activeCard - 1].playerLimit){
+        if(!this.canPlay && locks[this.activeCard - 1].playing.length < locks[this.activeCard - 1].playerLimit){
           this.playerService.tryLockPuzzle(this.activeCard);
         }
-        if(this.canPlay){
-          this.player = locks[this.activeCard-1].indexOf(this.id) + 1
-        }
+        //console.log(locks[this.activeCard-1].playing)
+        this.player = locks[this.activeCard-1].playing.indexOf(this.id) + 1
+        //console.log("(app component) player="+this.player)
       }
     })
   }

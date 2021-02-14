@@ -36,7 +36,12 @@ export class PuzzleViewerComponent implements OnInit, OnChanges {
       this.loadComponent();
     }
     if(this.componentRef){
-      this.componentRef.instance.canPlay = changes.canPlay.currentValue;
+      if(changes.canPlay){
+        this.componentRef.instance.canPlay = changes.canPlay.currentValue;
+      }
+      if(changes.player){
+        this.componentRef.instance.player = changes.player.currentValue;
+      }
     }
   }
 
@@ -53,6 +58,7 @@ export class PuzzleViewerComponent implements OnInit, OnChanges {
     this.componentRef = viewContainerRef.createComponent<BasePuzzleComponent>(factory);
     this.componentRef.instance.data = puzzleData.data;
     this.componentRef.instance.canPlay = this.canPlay;
+    this.componentRef.instance.player = this.player;
     this.componentRef.instance.complete.subscribe(() => {
       this.puzzleComplete();
     })

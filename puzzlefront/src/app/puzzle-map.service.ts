@@ -1,5 +1,6 @@
 import { Injectable, Type } from '@angular/core';
 import { GenericPuzzleComponent } from './generic-puzzle/generic-puzzle.component';
+import { PaintingPuzzleComponent } from './painting-puzzle/painting-puzzle.component';
 import { PuzzleCrosswordComponent } from './puzzle-crossword/puzzle-crossword.component';
 import { PuzzleData } from './puzzle-data';
 import { PuzzleSequenceAComponent } from './puzzle-sequence-a/puzzle-sequence-a.component';
@@ -24,8 +25,9 @@ export class PuzzleMapService {
                                                         description:[],
                                                         content:["If 7 bengs make a bong, 12 bongs make a bing and a screwdriver costs 3 bings, how many bengs does a screwdriver cost?"]}),
              5: new PuzzleData(GenericPuzzleComponent, {correctAnswer: "22",
-             description:[],
-             content:["Jane is moving house. She has 385 books and can fit 18 books in a box.","How many boxes will she need?"]})
+                                                        description:[],
+                                                        content:["Jane is moving house. She has 385 books and can fit 18 books in a box.","How many boxes will she need?"]}),
+             6: new PuzzleData(PaintingPuzzleComponent, {correctAnswer: "done"})
             }
   constructor() { }
   getPuzzle(id) : PuzzleData{
